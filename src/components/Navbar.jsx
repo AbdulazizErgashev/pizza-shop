@@ -16,13 +16,13 @@ export default function Navbar() {
   }, [menuOpen]);
 
   return (
-    <nav className="sticky top-0 z-50">
-      <div className="max-w-[85.438rem] mx-auto py-6 px-4 flex items-center justify-between relative">
+    <nav className="navbar-bg sticky top-0 z-50">
+      <div className="max-w-[85.438rem] mx-auto py-8 md:py-10 px-4 md:px-0 flex items-center justify-between relative">
         <div className="cursor-pointer flex-shrink-0">
           <img src={Logo} alt="Logo" className="w-32" />
         </div>
 
-        <ul className="hidden lg:flex gap-10 absolute left-1/2 transform -translate-x-1/2">
+        <ul className="hidden lg:flex gap-20 absolute left-1/2 transform -translate-x-1/2">
           {navLinks.map((link) => (
             <li key={link} className="cursor-pointer text-[#A3A3A3] text-lg">
               {link}
