@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const navLinks = ["Home", "Events", "Menu", "About Us"];
+  const navLinks = ["Home", "Menu", "Events", "About us"];
 
   useEffect(() => {
     if (menuOpen) {
@@ -17,30 +17,26 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50">
-      <div className="max-w-[85.438rem] mx-auto py-6 px-4 flex items-center justify-between">
-        <div className="cursor-pointer">
+      <div className="max-w-[85.438rem] mx-auto py-6 px-4 flex items-center justify-between relative">
+        <div className="cursor-pointer flex-shrink-0">
           <img src={Logo} alt="Logo" className="w-32" />
         </div>
 
-        <div className="flex items-center gap-6">
-          <ul className="hidden lg:flex items-center gap-10">
-            {navLinks.map((link) => (
-              <li
-                key={link}
-                className="cursor-pointer text-[#A3A3A3] text-lg hover:text-white transition"
-              >
-                {link}
-              </li>
-            ))}
-          </ul>
+        <ul className="hidden lg:flex gap-10 absolute left-1/2 transform -translate-x-1/2">
+          {navLinks.map((link) => (
+            <li key={link} className="cursor-pointer text-[#A3A3A3] text-lg">
+              {link}
+            </li>
+          ))}
+        </ul>
 
+        <div className="flex items-center gap-6">
           <button className="login-btn text-white font-medium text-lg px-6 py-2 cursor-pointer hidden lg:block">
             Log in
           </button>
           <button className="cursor-pointer">
             <img src={Bag} alt="Bag" className="w-8 h-8" />
           </button>
-
           <button
             onClick={() => setMenuOpen(true)}
             className="lg:hidden text-orange-400"
